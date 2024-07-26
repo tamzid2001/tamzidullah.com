@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamzid Ullah - Software Engineer & AI Consultant</title>
+    <meta name="description" content="Tamzid Ullah is a skilled Software Engineer and AI Consultant with expertise in algorithmic trading, machine learning, and big data analysis.">
+    <meta name="keywords" content="Tamzid Ullah, Software Engineer, AI Consultant, Algorithmic Trading, Machine Learning, Big Data, New York">
+    <script src="https://kit.fontawesome.com/83a5399452.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(52, 152, 219, 0.9);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1600x900/?technology');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1s ease 1s both;
+        }
+
+        .btn:hover {
+            background-color: #c0392b;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--secondary-color);
+        }
+
+        .skills, .projects, .certificates {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill, .project, .certificate {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            flex: 1 1 300px;
+            max-width: 350px;
+        }
+
+        .skill:hover, .project:hover, .certificate:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill i, .project i, .certificate i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .experience, .education {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -16px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            color: var(--text-color);
+        }
+
+        .education-item, .certificate {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: var(--text-color);
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after, .right::after {
+                left: 15px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">TU</div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Tamzid Ullah</h1>
+            <p>Software Engineer & AI Consultant</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm a passionate Software Engineer and AI Consultant with expertise in algorithmic trading, machine learning, and big data analysis. My work involves developing cutting-edge trading models and leveraging large datasets to drive decision-making in financial markets.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill">
+                    <i class="fas fa-code"></i>
+                    <h3>Programming</h3>
+                    <p>Python, JavaScript, SQL, MQL4</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Algorithmic Trading</h3>
+                    <p>MetaTrader 4/5, Multi-Period Binomial Models</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-brain"></i>
+                    <h3>Machine Learning</h3>
+                    <p>AI Model Development, Data Analysis</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-database"></i>
+                    <h3>Big Data</h3>
+                    <p>Large-scale Data Processing, Time Series Analysis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="./3.png" alt="Advanced Trading Algorithm">
+                    <h3>Advanced Trading Algorithm</h3>
+                    <p>Developed a sophisticated trading model using multi-period binomial analysis, optimized for tick data and real-time market dynamics.</p>
+                </div>
+                <div class="project">
+                    <img src="./1.png" alt="EURUSD Data Analysis">
+                    <h3>EURUSD Data Analysis</h3>
+                    <p>Processed and analyzed 5-10 years of EURUSD 1-Minute/Tick data, handling up to 2.16 billion data records for market structure insights.</p>
+                </div>
+                <div class="project">
+                    <img src="./2.png" alt="Economic Network Model">
+                    <h3>Economic Network Model</h3>
+                    <p>Created a real-time econometric trading model integrating social welfare theory, game theory, and economic networks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Software Engineer & AI Consultant</h3>
+                        <p>Outlier.ai, Scale AI | Feb 2024 - Present</p>
+                        <ul>
+                            <li>Enhanced AI model accuracy by 20%</li>
+                            <li>Improved response clarity by 15%</li>
+                            <li>Increased safe programming practices adherence by 10%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Generalist Software Engineer</h3>
+                        <p>askatlas.org | Jan 2024 - Apr 2024</p>
+                        <ul>
+                            <li>Developed Atlas AI, achieving 10,000 installs</li>
+                            <li>Increased user engagement by 35%</li>
+                            <li>Improved user retention by 20%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Proprietary Trader</h3>
+                        <p>Proprietary Trading Firm | Nov 2022 - Oct 2023</p>
+                        <ul>
+                            <li>Ranked in the top 5% in a trading challenge</li>
+                            <li>Improved trading decision accuracy by 20%</li>
+                            <li>Achieved a 10% average monthly return</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-item">
+            <h3>Master of Science in Computer Science</h3>
+            <p>New York Institute of Technology</p>
+            <p>Expected Graduation: Fall 2024</p>
+            <p>GPA: 3.72</p>
+            <p>Relevant Courses:</p>
+            <ul>
+                <li>Algorithm Concepts</li>
+                <li>Operating System Security</li>
+                <li>Big Data Analytics</li>
+                <li>Machine Learning</li>
+                <li>Programming Languages</li>
+                <li>Database Systems</li>
+            </ul>
+        </div>
+        <div class="education-item">
+            <h3>Bachelor of Science in Interdisciplinary Studies</h3>
+            <p>New York Institute of Technology</p>
+            <p>Graduated: Fall 2023</p>
+            <p>GPA: 3.4</p>
+            <p>Concentrations: Behavioral Sciences, Business, Computer Science</p>
+        </div>
+    </div>
+</section>
+
+<section id="certificates">
+    <div class="container">
+        <h2>Certificates</h2>
+        <div class="certificates">
+            <div class="certificate">
+                <i class="fas fa-certificate"></i>
+                <h3>Google Advanced Data Analytics</h3>
+                <p>Coursera | October 2023</p>
+            </div>
+            <div class="certificate">
+                <i class="fas fa-certificate"></i>
+                <h3>Google Business Intelligence</h3>
+                <p>Coursera | November 2023</p>
+            </div>
+            <div class="certificate">
+                <i class="fas fa-certificate"></i>
+                <h3>Google Data Analytics</h3>
+                <p>Coursera | November 2023</p>
+            </div>
+            <div class="certificate">
+                <i class="fas fa-certificate"></i>
+                <h3>Microsoft Certified: Azure Data Engineer Associate</h3>
+                <p>Microsoft | April 2022</p>
+            </div>
+            <div class="certificate">
+                <i class="fas fa-certificate"></i>
+                <h3>Google Cybersecurity</h3>
+                <p>Coursera | November 2023</p>
+            </div>
+            <div class="certificate">
+                <i class="fas fa-certificate"></i>
+                <h3>Data Engineering, Big Data, and Machine Learning on GCP</h3>
+                <p>Google Cloud on Coursera | November 2023</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+        <div class="social-links">
+            <a href="https://github.com/tamzid2001" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/tamzid-ullah-8a50a2234/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:tullah@nyit.edu"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Tamzid Ullah. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Change header background on scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+</script>
